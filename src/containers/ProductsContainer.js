@@ -8,8 +8,20 @@ class ProductsContainer extends Component {
     var { products } = this.props;
     return (
       //Len store lay state ve sau do truyen state vao products
-      <Products products = { products }/>
+      <Products>
+         {this.showProducts(products)}
+      </Products>
     );
+  }
+
+  showProducts(products){
+    var result = null;
+    if(products.length > 0) {
+      result = products.map((product, index)=> {
+        return <Product key = {index} product = {product}/> //Truyen props product de vao component Product lay gia tri thong qua props 
+      })
+    }
+    return result
   }
 }
 
