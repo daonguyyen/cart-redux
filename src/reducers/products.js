@@ -1,5 +1,3 @@
-const { act } = require("react-dom/test-utils");
-
 var initialState = [
     {
         id: 1,
