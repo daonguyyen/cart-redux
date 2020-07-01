@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Product from './Product';
-import { connect } from 'react-redux'; //B1: import connect
 
 class Products extends Component {
   render() {
@@ -26,10 +25,5 @@ class Products extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    products : state.products // B2: products lay tu producer products
-  }
-}
 
-export default connect(mapStateToProps, null) (Products); //B3: thuc hien connect
+export default Products; //B3: thuc hien connect
