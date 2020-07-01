@@ -4,6 +4,7 @@ import { connect } from 'react-redux'; //B1: import connect
 import Cart from './../components/Cart';
 import * as Message from './../constants/Message'
 import CartItem from '../components/CartItem';
+import CartResult from '../components/CartResult';
 
 class CartContainer extends Component {
   render() {
@@ -13,6 +14,7 @@ class CartContainer extends Component {
       //Len store lay state ve sau do truyen state vao products
       <Cart>
         {this.showCartItem(cart)}
+        {this.showTotalAmount(cart)}
       </Cart>
     );
   }
@@ -27,6 +29,14 @@ class CartContainer extends Component {
             index = {index} />
         )
       })
+    }
+    return result;
+  }
+
+  showTotalAmount = cart => {
+    var result = null;
+    if(cart.length > 0) {
+      result = <CartResult cart={cart} />
     }
     return result;
   }
