@@ -11,3 +11,5 @@ App
         CartItem
         CartResult
     Footer
+-mapStateToProps: chuyen cac state tren store thanh cac props cua component
+- PropTypes: kiem tra cac kieu du lieu props duoc nhan vao
