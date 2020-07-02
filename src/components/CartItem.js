@@ -7,7 +7,7 @@ class CartItem extends Component {
     return (
       <tr>
         <th scope="row">
-          <img src={ item.product.image }
+          <img src={item.product.image}
             alt={item.product.name} className="img-fluid z-depth-0" />
         </th>
         <td>
@@ -31,14 +31,26 @@ class CartItem extends Component {
         </td>
         <td>{this.showSubTotal(item.product.price, item.quantity)}$</td>
         <td>
-          <button type="button" className="btn btn-sm btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top"
-            title="" data-original-title="Remove item">
+          <button
+            type="button"
+            className="btn btn-sm btn-primary waves-effect waves-light"
+            data-toggle="tooltip"
+            data-placement="top"
+            title="" 
+            data-original-title="Remove item" 
+            onClick={ () => {this.onDelete(item.product)}}>
             X
                                         </button>
         </td>
       </tr>
     );
   }
+
+  onDelete(product) { 
+    var { onDeleteProductInCart } = this.props;
+    onDeleteProductInCart(product);
+  }
+
   showSubTotal = (price, quantity) => price * quantity;
 }
 

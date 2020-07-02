@@ -5,6 +5,7 @@ import Cart from './../components/Cart';
 import * as Message from './../constants/Message'
 import CartItem from '../components/CartItem';
 import CartResult from '../components/CartResult';
+import {actDeleteProductInCart} from './../actions/index'
 
 class CartContainer extends Component {
   render() {
@@ -19,8 +20,9 @@ class CartContainer extends Component {
     );
   }
   showCartItem = cart => {
+  var {onDeleteProductInCart} = this.props
     var result = <tr>
-                  <td>Message.MSG_CART_EMPTY</td>
+                  <td>{Message.MSG_CART_EMPTY}</td>
                 </tr>;
     if(cart.length > 0) {
       result = cart.map((item, index)=> {
@@ -28,7 +30,8 @@ class CartContainer extends Component {
           <CartItem 
             key={ index }
             item={item} 
-            index = {index} />
+            index = {index} 
+            onDeleteProductInCart = {onDeleteProductInCart}/>
         )
       })
     }
@@ -67,4 +70,12 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, null)(CartContainer); //B3: thuc hien connect
+const mapDispatchToProps = (dispatch, props) => {
+  return {
+    onDeleteProductInCart : (product) => {
+      dispatch(actDeleteProductInCart(product));
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CartContainer); //B3: thuc hien connect
