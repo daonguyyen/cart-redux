@@ -26,7 +26,7 @@ const cart = (state = initialState, action) => {
 var findProductInCart = (cart, product) => {
      var index = -1;
      if(cart.length > 0) {
-        for(var i = 0; i <= cart.length; i++){
+        for(var i = 0; i < cart.length; i++){
             if(cart[i].product.id === product.id){
                 index = i;
                 break;

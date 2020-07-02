@@ -54,13 +54,13 @@ class Header extends Component {
                 <div className="collapsible-body">
                   <ul>
                     <li>
-                      <a href="product.html" className="waves-effect"  href="#!">Product Page V.1</a>
+                      <a href="product.html" className="waves-effect">Product Page V.1</a>
                     </li>
                     <li>
-                      <a href="product-page.html" className="waves-effect"  href="#!">Product Page V.2</a>
+                      <a href="product-page.html" className="waves-effect">Product Page V.2</a>
                     </li>
                     <li>
-                      <a href="product-page-4.html" className="waves-effect"  href="#!">Product Page V.3</a>
+                      <a href="product-page-4.html" className="waves-effect">Product Page V.3</a>
                     </li>
                   </ul>
                 </div>
